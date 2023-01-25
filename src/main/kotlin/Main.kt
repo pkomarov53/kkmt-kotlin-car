@@ -37,6 +37,7 @@ fun carInformationFiller(engineInfo: Engine, trailerInfo: Trailer): Car {
 
     return Car(carBrand, carModel, carWeight, engineInfo, trailerInfo)
 }
+
 fun main() {
     val engineInfo = engineInformationFiller()
     val trailerInfo = trailerInformationFiller()
@@ -49,7 +50,7 @@ fun main() {
             "0 - Завершить работу программы\n")
 
     while (true) {
-        when(readLine()) {
+        when(readlnOrNull()) {
             "1" -> println(carInfo.informationOutput())
             "2" -> println(engineInfo.powerDensityCalculator(carInfo.carWeight +
                     engineInfo.engineWeight +
@@ -57,6 +58,7 @@ fun main() {
             "3" -> println(trailerInfo.addWeight())
             "4" -> carInfo.trailerAssemble()
             "0" -> break
+            else -> continue
         }
     }
 }

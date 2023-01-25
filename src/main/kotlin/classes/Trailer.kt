@@ -4,7 +4,7 @@ class Trailer(val manName: String, emptyWeight: Int, val maxWeight: Int, var cur
 
     fun addWeight() {
         print("Введите массу груза: ")
-        val cargo = readLine()!!.toInt()
+        val cargo = readln().toInt()
         if ((cargo + curWeight) <= maxWeight) {
             curWeight += cargo
             print("Груз добавлен в прицеп.")
